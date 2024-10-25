@@ -1,26 +1,26 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc_template/features/home/domain/entites/user_entity.dart';
 
-abstract class UserState extends Equatable {
+sealed class UserState extends Equatable {
   @override
   List<Object> get props => [];
 }
 
-class UserInitial extends UserState {}
+class UserInitialState extends UserState {}
 
-class UserLoading extends UserState {}
+class UserLoadingState extends UserState {}
 
-class UserLoaded extends UserState {
+class UserLoadedState extends UserState {
   final List<UserEntity> users;
-  UserLoaded(this.users);
+  UserLoadedState(this.users);
 
   @override
   List<Object> get props => [users];
 }
 
-class UserError extends UserState {
+class UserErrorState extends UserState {
   final String message;
-  UserError(this.message);
+  UserErrorState(this.message);
 
   @override
   List<Object> get props => [message];
