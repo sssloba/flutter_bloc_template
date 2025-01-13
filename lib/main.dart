@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
+  // UI Debugging
+  /// log Widgets rebulds
+  debugPrintRebuildDirtyWidgets = true;
+
+  /// debug Widgets by painting a box around its bounds
+  debugPaintSizeEnabled = true;
+
   runApp(const MainApp());
 }
 
